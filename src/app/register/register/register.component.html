@@ -1,0 +1,58 @@
+<div class="form">
+  <h2 class="title center">Register</h2>
+  <form
+    action=""
+    cForm
+    class="row g-3 form-main"
+    (ngSubmit)="onSubmit()"
+    [validated]="customStylesValidated"
+  >
+    <c-col [md]="6">
+      <label cLabel for="username" class="form-label">Username</label>
+      <input
+        cFormControl
+        [(ngModel)]="username"
+        id="username"
+        name="username"
+        type="text"
+        required
+        placeholder="Enter username"
+      />
+      <c-form-feedback [valid]="false">Username is required</c-form-feedback>
+    </c-col>
+    <c-col [md]="6">
+      <label cLabel for="inputPassword" class="form-label">Password</label>
+      <input
+        cFormControl
+        id="inputPassword"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Enter password"
+      />
+      <c-form-feedback [valid]="false">Password is required</c-form-feedback>
+    </c-col>
+    <c-col [xs]="12">
+      <label cLabel for="inputEmail" class="form-label">Email</label>
+      <input
+        cFormControl
+        id="inputEmail"
+        placeholder="a123@gmail.com"
+        name="email"
+        type="email"
+        required
+        [(ngModel)]="email"
+      />
+      <c-form-feedback [valid]="false">Email is required</c-form-feedback>
+    </c-col>
+
+    <div class="center">
+      <button cButton color="secondary" type="reset" class="me-3">Reset</button>
+      <button cButton class="btn-color" type="submit">Submit</button>
+    </div>
+    <div class="back">
+      <a routerLink="/login">Back</a>
+    </div>
+  </form>
+</div>

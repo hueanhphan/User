@@ -1,0 +1,40 @@
+<div class="form">
+  <h2 class="title center">Login</h2>
+  <form
+    action=""
+    cForm
+    class="row g-3 form-main"
+    (ngSubmit)="onSubmitLogin()"
+    [validated]="customStylesValidated"
+  >
+    <c-col [md]="12">
+      <label cLabel for="username" class="form-label">Username</label>
+      <input
+        cFormControl
+        [(ngModel)]="username"
+        id="username"
+        name="username"
+        type="text"
+        required
+        placeholder="username"
+      />
+      <c-form-feedback [valid]="false">Username is required</c-form-feedback>
+    </c-col>
+    <c-col [md]="12">
+      <label cLabel for="inputPassword " class="form-label">Password </label>
+      <input
+        cFormControl
+        id="inputPassword"
+        type="password"
+        name="password"
+        required
+        [(ngModel)]="password"
+        placeholder="password"
+      />
+      <c-form-feedback [valid]="false">Password is required</c-form-feedback>
+    </c-col>
+    <div class="center">
+      <button cButton class="btn-color" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

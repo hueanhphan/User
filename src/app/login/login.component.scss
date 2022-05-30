@@ -1,0 +1,33 @@
+.title{
+  margin: 30px 0;
+  color: #092B2B ;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.form{
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 150px;
+  border:1px solid #092B2B;
+  border-radius: 12px;
+  box-shadow:5px 10px 10px#092B2B ;
+}
+
+.form-main{
+  margin: 10px 20px 40px;
+}
+
+.form-label{
+  font-weight: bold;
+}
+.btn-color{
+  background-color: #092B2B ;
+}
+@media only screen and (max-width: 450px){
+  .form {
+    width: 80%;
+  }
+}

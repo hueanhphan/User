@@ -1,0 +1,49 @@
+<div class="dashboard">
+  <c-container class="table-container">
+    <h2 class="title center">USER MANAGEMENT</h2>
+    <input
+      type="text"
+      placeholder="Search"
+      class="input-search"
+      [(ngModel)]="searchText"
+    />
+    <table cTable>
+      <thead>
+        <tr class="t-table">
+          <th scope="col" class="text-white">ID</th>
+          <th scope="col" class="text-white">Username</th>
+          <th scope="col" class="text-white">Password</th>
+          <th scope="col" class="text-white">Email</th>
+          <th scope="col" class="text-white"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | filter: searchText">
+          <th scope="row">{{ user.id }}</th>
+          <td>{{ user.username }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button
+              cButton
+              color="info"
+              variant="outline"
+              (click)="handleChangePage(user)"
+              class="me-2"
+            >
+              <svg cIcon [cIcon]="icons.cilPencil" size="l"></svg>
+            </button>
+            <button
+              cButton
+              color="danger"
+              variant="outline"
+              (click)="handleDeleteUser(user)"
+            >
+              <span><svg cIcon [cIcon]="icons.cilTrash" size="l"></svg> </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </c-container>
+</div>

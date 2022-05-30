@@ -1,0 +1,45 @@
+<div class="form">
+  <h2 class="title center">Update</h2>
+  <form action="" cForm class="row g-3 form-main" (ngSubmit)="onSubmit(user)">
+    <c-col [md]="6">
+      <label cLabel for="username">Username</label>
+      <input
+        cFormControl
+        [(ngModel)]="user.username"
+        id="username"
+        name="username"
+        type="text"
+        required
+      />
+    </c-col>
+    <c-form-feedback [valid]="false">Username is required</c-form-feedback>
+    <c-col [md]="6">
+      <label cLabel for="inputPassword">Password</label>
+      <input
+        cFormControl
+        id="inputPassword"
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        required
+      />
+      <c-form-feedback [valid]="false">Password is required</c-form-feedback>
+    </c-col>
+    <c-col [xs]="12">
+      <label cLabel for="inputEmail">Email</label>
+      <input
+        cFormControl
+        id="inputEmail"
+        placeholder="a123@gmail.com"
+        name="email"
+        [(ngModel)]="user.email"
+        required
+      />
+      <c-form-feedback [valid]="false">Email is required</c-form-feedback>
+    </c-col>
+
+    <div class="center">
+      <button cButton class="btn-color" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
